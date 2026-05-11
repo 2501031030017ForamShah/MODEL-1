@@ -2,34 +2,98 @@
 <html>
 <head>
     <title>Simple Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gender {
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h2>Registration Form</h2>
+    <div class="form-container">
+        <h2>Registration Form</h2>
 
-    <form>
-        <label>Full Name:</label><br>
-        <input type="text" name="fullname"><br><br>
+        <form>
+            <label>Full Name:</label><br>
+            <input type="text" name="fullname"><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email"><br><br>
 
-        <label>Password:</label><br>
-        <input type="password" name="password"><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="password"><br><br>
 
-        <label>Gender:</label><br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female<br><br>
+            <label>Gender:</label><br>
+            <div class="gender">
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+            </div>
+            <br>
 
-        <label>City:</label><br>
-        <select>
-            <option>Vadodara</option>
-            <option>Ahmedabad</option>
-            <option>Surat</option>
-        </select><br><br>
+            <label>City:</label><br>
+            <select>
+                <option>Vadodara</option>
+                <option>Ahmedabad</option>
+                <option>Surat</option>
+            </select><br><br>
 
-        <input type="submit" value="Register">
-    </form>
+            <input type="submit" value="Register">
+        </form>
+    </div>
 
 </body>
 </html>
