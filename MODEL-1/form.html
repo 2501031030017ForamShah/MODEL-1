@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Form</title>
+    <title>Advanced Form</title>
 
     <style>
         body {
@@ -10,14 +10,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .form-container {
             background: white;
             padding: 25px;
             border-radius: 10px;
-            width: 320px;
+            width: 350px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
 
@@ -30,10 +30,9 @@
             font-weight: bold;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
@@ -41,17 +40,21 @@
             border-radius: 5px;
         }
 
-        .gender {
+        .gender,
+        .hobbies {
             margin-top: 5px;
         }
 
+        .gender input,
+        .hobbies input {
+            width: auto;
+        }
+
         input[type="submit"] {
-            width: 100%;
             background: #007bff;
             color: white;
             padding: 10px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
         }
@@ -64,36 +67,72 @@
 
 <body>
 
-    <div class="form-container">
-        <h2>Registration Form</h2>
+<div class="form-container">
 
-        <form>
-            <label>Full Name:</label><br>
-            <input type="text" name="fullname"><br><br>
+    <h2>Registration Form</h2>
 
-            <label>Email:</label><br>
-            <input type="email" name="email"><br><br>
+    <form>
 
-            <label>Password:</label><br>
-            <input type="password" name="password"><br><br>
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname"><br><br>
 
-            <label>Gender:</label><br>
-            <div class="gender">
-                <input type="radio" name="gender"> Male
-                <input type="radio" name="gender"> Female
-            </div>
-            <br>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
 
-            <label>City:</label><br>
-            <select>
-                <option>Vadodara</option>
-                <option>Ahmedabad</option>
-                <option>Surat</option>
-            </select><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
 
-            <input type="submit" value="Register">
-        </form>
-    </div>
+        <label>Phone Number:</label><br>
+        <input type="tel" name="phone"><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" min="1" max="100"><br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob"><br><br>
+
+        <label>Website:</label><br>
+        <input type="url" name="website"><br><br>
+
+        <label>Favorite Color:</label><br>
+        <input type="color" name="color"><br><br>
+
+        <label>Gender:</label><br>
+        <div class="gender">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+        <br>
+
+        <label>Hobbies:</label><br>
+        <div class="hobbies">
+            <input type="checkbox"> Reading
+            <input type="checkbox"> Music
+            <input type="checkbox"> Sports
+        </div>
+        <br>
+
+        <label>City:</label><br>
+        <select>
+            <option>Vadodara</option>
+            <option>Ahmedabad</option>
+            <option>Surat</option>
+        </select><br><br>
+
+        <label>Upload Resume:</label><br>
+        <input type="file" name="resume"><br><br>
+
+        <label>Experience Level:</label><br>
+        <input type="range" min="0" max="10"><br><br>
+
+        <label>Address:</label><br>
+        <textarea rows="4"></textarea><br><br>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+</div>
 
 </body>
 </html>
