@@ -1,0 +1,131 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background-color: #111;
+  padding: 15px 40px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+nav h2 {
+  color: orange;
+}
+
+/* LINKS */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* CONTACT SECTION */
+.features {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* TITLE */
+.features h2 {
+  font-size: 35px;
+  margin-bottom: 25px;
+  color: orange;
+}
+
+/* CONTACT BOX */
+.features div {
+  background: #333;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.features p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* FORM INPUTS */
+input, textarea {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* INPUT STYLE */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* TEXTAREA */
+textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+/* BUTTON */
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+button:hover {
+  background: white;
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav div {
+    margin-top: 10px;
+  }
+
+  .features div {
+    width: 100%;
+  }
+}
