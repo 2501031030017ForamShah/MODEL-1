@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car World</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="home page.css">
+    <link rel="stylesheet" href="hedar.css">
+</head>
+
+<body>
+
+    <!-- HEADER WILL LOAD HERE -->
+    <div id="hedar"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <h1>Welcome to Car World</h1>
+
+        <p>Discover luxury, sports, and modern cars in one place.</p>
+
+        <img src="image/main_car.jpg" alt="Main Car Image">
+
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery">
+
+        <h2>Our Popular Cars</h2>
+
+        <div class="car-container">
+
+            <div class="car-card">
+                <img src="image/sports_car.jpg" alt="Sports Car">
+                <h3>Sports Car</h3>
+                <p>High speed and stylish design.</p>
+            </div>
+
+            <div class="car-card">
+                <img src="image/luxurious_car.jpg" alt="Luxury Car">
+                <h3>Luxury Car</h3>
+                <p>Comfort and premium experience.</p>
+            </div>
+
+            <div class="car-card">
+                <img src="image/suv_car.jpg" alt="SUV Car">
+                <h3>SUV Car</h3>
+                <p>Powerful performance for every road.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+
+        <h2>Why Choose Us?</h2>
+
+        <ul>
+            <li>Latest Car Models</li>
+            <li>Affordable Prices</li>
+            <li>Fast Delivery</li>
+            <li>24/7 Customer Support</li>
+        </ul>
+
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER LOAD -->
+<div id="footer"></div>
+
+<script src="footer.js"></script>
+
+    <!-- HEADER LOAD SCRIPT -->
+    <script>
+        fetch("hedar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("hedar").innerHTML = data;
+            });
+    </script>
+
+</body>
+
+</html>
