@@ -1,104 +1,95 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body{
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f2f2f2;
+
 }
 
-/* BODY */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
 
-/* HEADER */
-header {
-  background-color: #111;
-  padding: 15px 40px;
-}
-
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* LOGO */
-nav h2 {
-  color: orange;
-}
-
-/* LINKS */
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: orange;
-}
 
 /* SERVICES SECTION */
-.features {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
+
+.features{
+
+    width: 80%;
+
+    margin: 60px auto;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 15px lightgray;
+
+    text-align: center;
+
 }
+
+
 
 /* TITLE */
-.features h2 {
-  font-size: 35px;
-  margin-bottom: 25px;
-  color: orange;
+
+.features h2{
+
+    font-size: 40px;
+
+    margin-bottom: 40px;
+
+    color: black;
+
 }
+
+
 
 /* LIST */
-.features ul {
-  list-style: none;
-  max-width: 600px;
-  margin: auto;
+
+.features ul{
+
+    list-style: none;
+
+    padding: 0;
+
 }
 
-.features li {
-  background: #333;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 18px;
-  transition: 0.3s;
+
+
+/* LIST ITEMS */
+
+.features ul li{
+
+    background: #111;
+
+    color: white;
+
+    margin: 20px 0;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
 }
+
+
 
 /* HOVER EFFECT */
-.features li:hover {
-  background: orange;
-  color: black;
-  transform: scale(1.03);
-}
 
-/* FOOTER */
-footer {
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
+.features ul li:hover{
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
+    transform: scale(1.03);
 
-  nav div {
-    margin-top: 10px;
-  }
+    background: #444;
 
-  .features li {
-    font-size: 16px;
-  }
 }
