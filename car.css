@@ -113,3 +113,10 @@ footer {
     width: 90%;
   }
 }
+/* HIDDEN CARS */
+
+.extra-cars{
+
+    display: none;
+
+}

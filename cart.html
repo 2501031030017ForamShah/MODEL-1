@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cart Page</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="cart.css">
+
+</head>
+
+<body>
+
+
+<div class="cart-container">
+
+
+    <!-- IMAGE -->
+
+    <div class="cart-image">
+
+        <img src="image/sports_car.jpg"
+             alt="Car Image">
+
+    </div>
+
+
+
+    <!-- DETAILS -->
+
+    <div class="cart-details">
+
+        <h1>
+
+            Sports Car 🚗
+
+        </h1>
+
+        <h2>
+
+            Price: ₹ 5000000
+
+        </h2>
+
+
+
+        <!-- QUANTITY -->
+
+        <div class="quantity-box">
+
+            <button onclick="minus()">
+
+                -
+
+            </button>
+
+            <span id="qty">
+
+                1
+
+            </span>
+
+            <button onclick="plus()">
+
+                +
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOTAL -->
+
+        <h2>
+
+            Total: ₹ <span id="total">
+
+                5000000
+
+            </span>
+
+        </h2>
+
+    </div>
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    let quantity = 1;
+
+    let price = 5000000;
+
+
+
+    function plus(){
+
+        quantity++;
+
+        document.getElementById("qty").innerHTML = quantity;
+
+        document.getElementById("total").innerHTML = quantity * price;
+
+    }
+
+
+
+    function minus(){
+
+        if(quantity > 1){
+
+            quantity--;
+
+            document.getElementById("qty").innerHTML = quantity;
+
+            document.getElementById("total").innerHTML = quantity * price;
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>

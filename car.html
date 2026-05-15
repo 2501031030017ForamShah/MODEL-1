@@ -2,65 +2,252 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
   <title>Cars - Car World</title>
 
-  <link rel="stylesheet" href="car.css">
+  <link rel="stylesheet"
+        href="car.css">
+
 </head>
 
 <body>
+
+
+<!-- HEADER -->
+
 <div id="hedar"></div>
 
-  <script src="hedar.js"></script>
+<script src="hedar.js"></script>
 
-  <!-- HEADER -->
-  
 
-  <!-- CAR PAGE SECTION -->
-  <section class="gallery">
 
-    <h2>Our Car Collection</h2>
+<!-- CAR PAGE SECTION -->
+
+<section class="gallery">
+
+    <h2>
+
+        Our Car Collection 🚗
+
+    </h2>
+
 
     <div class="car-container">
 
+
       <!-- CAR 1 -->
+
       <div class="car-card">
-        <img src="image/sports_car.jpg" alt="Sports Car">
-        <h3>Sports Car</h3>
-        <p>High speed and stylish design for performance lovers.</p>
+
+        <img src="image/sports_car.jpg"
+             alt="Sports Car">
+
+        <h3>
+
+            Sports Car
+
+        </h3>
+
+        <p>
+
+            High speed and stylish design for performance lovers.
+
+        </p>
+
       </div>
+
+
 
       <!-- CAR 2 -->
+
       <div class="car-card">
-        <img src="image/luxurious_car.jpg" alt="Luxury Car">
-        <h3>Luxury Car</h3>
-        <p>Premium comfort with top-class interior experience.</p>
+
+        <img src="image/luxurious_car.jpg"
+             alt="Luxury Car">
+
+        <h3>
+
+            Luxury Car
+
+        </h3>
+
+        <p>
+
+            Premium comfort with top-class interior experience.
+
+        </p>
+
       </div>
+
+
 
       <!-- CAR 3 -->
+
       <div class="car-card">
-        <img src="image/suv_car.jpg" alt="SUV Car">
-        <h3>SUV</h3>
-        <p>Powerful SUV for all terrains and long drives.</p>
+
+        <img src="image/suv_car.jpg"
+             alt="SUV Car">
+
+        <h3>
+
+            SUV
+
+        </h3>
+
+        <p>
+
+            Powerful SUV for all terrains and long drives.
+
+        </p>
+
       </div>
 
+
+
       <!-- CAR 4 -->
+
       <div class="car-card">
 
-        <img src="image/super_car.jpg" alt="Super Car">
-        <h3>Super Car</h3>
-        <p>Extreme performance with futuristic design.</p>
+        <img src="image/super_car.jpg"
+             alt="Super Car">
+
+        <h3>
+
+            Super Car
+
+        </h3>
+
+        <p>
+
+            Extreme performance with futuristic design.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- HIDDEN CAR 5 -->
+
+      <div class="car-card extra-cars">
+
+        <img src="image/car5.jpg"
+             alt="Electric Car">
+
+        <h3>
+
+            Electric Car
+
+        </h3>
+
+        <p>
+
+            Eco-friendly future technology car.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- HIDDEN CAR 6 -->
+
+      <div class="car-card extra-cars">
+
+        <img src="image/car6.jpg"
+             alt="Classic Car">
+
+        <h3>
+
+            Classic Car
+
+        </h3>
+
+        <p>
+
+            Vintage royal style car.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- HIDDEN CAR 7 -->
+
+      <div class="car-card extra-cars">
+
+        <img src="image/car7.jpg"
+             alt="Convertible Car">
+
+        <h3>
+
+            Convertible Car
+
+        </h3>
+
+        <p>
+
+            Stylish open roof driving experience.
+
+        </p>
+
       </div>
 
     </div>
 
-  </section>
 
-  <!-- FOOTER -->
-  <!-- FOOTER LOAD -->
+
+    <!-- LOAD MORE BUTTON -->
+
+    <div class="load-more-box">
+
+        <button id="loadBtn"
+                onclick="loadMore()">
+
+            Load More 🚗
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
 <div id="footer"></div>
 
 <script src="footer.js"></script>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function loadMore(){
+
+    let cars = document.querySelectorAll(".extra-cars");
+
+    cars.forEach(function(car){
+
+        car.style.display = "block";
+
+    });
+
+    document.getElementById("loadBtn").style.display = "none";
+
+}
+
+</script>
+
 </body>
+
 </html>
