@@ -2,138 +2,95 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
 
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="cart.css">
-
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
 </head>
 
 <body>
 
-
 <div class="cart-container">
 
-
-    <!-- IMAGE -->
-
     <div class="cart-image">
-
-        <img src="image/sports_car.jpg"
-             alt="Car Image">
-
+        <img id="car-img" src="image/sports_car.jpg" alt="Car Image">
     </div>
-
-
-
-    <!-- DETAILS -->
 
     <div class="cart-details">
-
-        <h1>
-
-            Sports Car 🚗
-
-        </h1>
-
-        <h2>
-
-            Price: ₹ 5000000
-
-        </h2>
-
-
-
-        <!-- QUANTITY -->
-
-        <div class="quantity-box">
-
-            <button onclick="minus()">
-
-                -
-
-            </button>
-
-            <span id="qty">
-
-                1
-
-            </span>
-
-            <button onclick="plus()">
-
-                +
-
-            </button>
-
+        
+        <div class="select-box" style="margin-bottom: 25px;">
+            <label for="car-select" style="color: #666; font-size: 14px; display: block; margin-bottom: 8px; font-weight: bold;">Choose Your Car:</label>
+            <select id="car-select" onchange="changeCar()" style="padding: 12px; width: 100%; border-radius: 5px; border: 2px solid #111; font-size: 16px; background: #111; color: white; cursor: pointer; font-weight: bold;">
+                <option value="sports" data-price="5000000" data-img="image/sports_car.jpg">Sports Car 🚗</option>
+                <option value="luxury" data-price="8500000" data-img="image/luxurious_car.jpg">Luxury Sedan 💎</option>
+                <option value="suv" data-price="4500000" data-img="image/suv_car.jpg">Premium SUV 🏔️</option>
+            </select>
         </div>
 
-
-
-        <!-- TOTAL -->
+        <h1 id="car-title">Sports Car 🚗</h1>
 
         <h2>
+            Price: ₹ <span id="price-display">5000000</span>
+        </h2>
 
-            Total: ₹ <span id="total">
+        <div class="quantity-box">
+            <button onclick="minus()">-</button>
+            <span id="qty">1</span>
+            <button onclick="plus()">+</button>
+        </div>
 
-                5000000
-
-            </span>
-
+        <h2>
+            Total: ₹ <span id="total">5000000</span>
         </h2>
 
     </div>
-
 </div>
 
-
-
-<!-- JAVASCRIPT -->
-
 <script>
-
     let quantity = 1;
+    let price = 5000000; 
 
-    let price = 5000000;
+    function changeCar() {
+        let selectEl = document.getElementById("car-select");
+        let selectedOption = selectEl.options[selectEl.selectedIndex];
 
+        // Read data directly from your local options
+        price = parseInt(selectedOption.getAttribute("data-price"));
+        let newImg = selectedOption.getAttribute("data-img");
+        let newTitle = selectedOption.text;
 
+        // Change the content on the screen
+        document.getElementById("car-title").innerText = newTitle;
+        document.getElementById("price-display").innerText = price;
+        document.getElementById("car-img").src = newImg;
+
+        // Reset dynamic values
+        quantity = 1;
+        document.getElementById("qty").innerHTML = quantity;
+        updateTotal();
+    }
 
     function plus(){
-
         quantity++;
-
         document.getElementById("qty").innerHTML = quantity;
-
-        document.getElementById("total").innerHTML = quantity * price;
-
+        updateTotal();
     }
-
-
 
     function minus(){
-
         if(quantity > 1){
-
             quantity--;
-
             document.getElementById("qty").innerHTML = quantity;
-
-            document.getElementById("total").innerHTML = quantity * price;
-
+            updateTotal();
         }
-
     }
 
+    function updateTotal() {
+        document.getElementById("total").innerHTML = quantity * price;
+    }
 </script>
 
 </body>
-
 </html>
