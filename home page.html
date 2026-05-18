@@ -39,7 +39,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Sports Car</h5>
                     <p class="card-text">High speed and stylish design.</p>
+                <div class="quantity-control" style="background: none; border-top: none; padding: 0 0 10px 0;">
+                    <button class="qty-btn minus" onclick="decreaseQty(this)" style="width:30px;height:30px;font-size:16px;">−</button>
+                    <input type="number" class="qty-input" value="1" min="1" readonly style="width:40px;height:30px;font-size:14px;color:black;">
+                    <button class="qty-btn plus" onclick="increaseQty(this)" style="width:30px;height:30px;font-size:16px;">+</button>
                 </div>
+                <button class="btn" style="width: 100%; display: block;" onclick="addToCart(this)">Add To Cart</button>
+            </div>
             </div>
 
             <div class="card" style="width: 18rem;">
@@ -47,7 +53,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Luxury Car</h5>
                     <p class="card-text">Comfort and premium experience.</p>
+                <div class="quantity-control" style="background: none; border-top: none; padding: 0 0 10px 0;">
+                    <button class="qty-btn minus" onclick="decreaseQty(this)" style="width:30px;height:30px;font-size:16px;">−</button>
+                    <input type="number" class="qty-input" value="1" min="1" readonly style="width:40px;height:30px;font-size:14px;color:black;">
+                    <button class="qty-btn plus" onclick="increaseQty(this)" style="width:30px;height:30px;font-size:16px;">+</button>
                 </div>
+                <button class="btn" style="width: 100%; display: block;" onclick="addToCart(this)">Add To Cart</button>
+            </div>
             </div>
 
             <div class="card" style="width: 18rem;">
@@ -55,7 +67,13 @@
                 <div class="card-body">
                     <h5 class="card-title">SUV Car</h5>
                     <p class="card-text">Powerful performance for every road.</p>
+                <div class="quantity-control" style="background: none; border-top: none; padding: 0 0 10px 0;">
+                    <button class="qty-btn minus" onclick="decreaseQty(this)" style="width:30px;height:30px;font-size:16px;">−</button>
+                    <input type="number" class="qty-input" value="1" min="1" readonly style="width:40px;height:30px;font-size:14px;color:black;">
+                    <button class="qty-btn plus" onclick="increaseQty(this)" style="width:30px;height:30px;font-size:16px;">+</button>
                 </div>
+                <button class="btn" style="width: 100%; display: block;" onclick="addToCart(this)">Add To Cart</button>
+            </div>
             </div>
         </div>
     </section>
@@ -127,6 +145,7 @@
             })
             .catch(err => console.error("Error loading footer:", err));
     </script>
+    <script src="cart.js"></script>
 
 </body>
 

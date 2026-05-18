@@ -37,230 +37,8 @@
     </h2>
 
 
-    <div class="car-container">
-
-
-
-      <div class="car-card">
-
-        <img src="image/sports_car.jpg" alt="Sports Car">
-
-        <h3>
-
-          Sports Car
-
-        </h3>
-
-        <p>
-
-          High speed and stylish design for performance lovers.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CAR 2 -->
-
-      <div class="car-card">
-
-        <img src="image/luxurious_car.jpg" alt="Luxury Car">
-
-        <h3>
-
-          Luxury Car
-
-        </h3>
-
-        <p>
-
-          Premium comfort with top-class interior experience.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CAR 3 -->
-
-      <div class="car-card">
-
-        <img src="image/suv_car.jpg" alt="SUV Car">
-
-        <h3>
-
-          SUV
-
-        </h3>
-
-        <p>
-
-          Powerful SUV for all terrains and long drives.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CAR 4 -->
-
-      <div class="car-card">
-
-        <img src="image/super_car.jpg" alt="Super Car">
-
-        <h3>
-
-          Super Car
-
-        </h3>
-
-        <p>
-
-          Extreme performance with futuristic design.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- EXTRA CAR 5 -->
-
-      <div class="car-card extra-cars">
-
-        <img src="image/Electric_car.jpg" alt="Electric Car">
-
-        <h3>
-
-          Electric Car
-
-        </h3>
-
-        <p>
-
-          Eco-friendly future technology car.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- EXTRA CAR 6 -->
-
-      <div class="car-card extra-cars">
-
-        <img src="image/Classic_car.jpg" alt="Classic Car">
-
-        <h3>
-
-          Classic Car
-
-        </h3>
-
-        <p>
-
-          Vintage royal style car.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- EXTRA CAR 7 -->
-
-      <div class="car-card extra-cars">
-
-        <img src="image/Convertible_car.jpg" alt="Convertible Car">
-
-        <h3>
-
-          Convertible Car
-
-        </h3>
-
-        <p>
-
-          Stylish open roof driving experience.
-
-        </p>
-
-        <div class="quantity-control">
-
-          <button class="qty-btn minus" onclick="decreaseQty(this)">−</button>
-
-          <input type="number" class="qty-input" value="1" min="1" readonly>
-
-          <button class="qty-btn plus" onclick="increaseQty(this)">+</button>
-
-        </div>
-
-      </div>
-
+    <div class="car-container" id="cart-items-container">
+      <!-- Cart items will be rendered here dynamically via cart.js -->
     </div>
 
 
@@ -268,21 +46,12 @@
     <!-- BUTTONS -->
 
     <div class="load-more-box">
-
-      <button id="loadBtn" onclick="loadMore()">
-
-        Load More 🚗
-
+      <button id="cartBtn" onclick="checkout()" style="background: green;">
+        Checkout 🛒
       </button>
-
-
-
-      <button id="cartBtn" onclick="goToCart()">
-
-        Add To Cart 🛒
-
+      <button id="clearBtn" onclick="clearCart()" style="background: darkred;">
+        Clear Cart ❌
       </button>
-
     </div>
 
   </section>
@@ -298,53 +67,22 @@
 
 
   <!-- JAVASCRIPT -->
-
+  <script src="cart.js"></script>
   <script>
-
-    function loadMore() {
-
-      let cars = document.querySelectorAll(".extra-cars");
-
-      cars.forEach(function (car) {
-
-        car.style.display = "block";
-
-      });
-
-    }
-
-
-
-    function goToCart() {
-
-      window.location.href = "cart.html";
-
-    }
-
-
-
-    function increaseQty(button) {
-
-      let input = button.parentElement.querySelector(".qty-input");
-
-      input.value = parseInt(input.value) + 1;
-
-    }
-
-
-
-    function decreaseQty(button) {
-
-      let input = button.parentElement.querySelector(".qty-input");
-
-      if (parseInt(input.value) > 1) {
-
-        input.value = parseInt(input.value) - 1;
-
+    function checkout() {
+      let cart = getCart();
+      if (cart.length > 0) {
+        alert("Proceeding to checkout with " + cart.length + " items!");
+        // window.location.href = "pymant.html";
+      } else {
+        alert("Your cart is empty!");
       }
-
     }
 
+    function clearCart() {
+      saveCart([]);
+      renderCart();
+    }
   </script>
 
 </body>
