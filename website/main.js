@@ -5,6 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollToTop();
     renderCart(); // If on cart page
     loadProductDetails(); // If on product detail page
+    
+    // Auto-filter on product page if coming from category page
+    if(window.location.pathname.includes("product.html")) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const cat = urlParams.get('category');
+        if(cat) {
+            let catSelect = document.getElementById("catFilter");
+            if(catSelect) {
+                catSelect.value = cat;
+                filterAndSort();
+            }
+        }
+    }
 });
 
 function loadComponents() {
@@ -139,6 +152,42 @@ function loadMore() {
     hiddenItems.forEach(item => item.style.display = "block");
     let btn = document.getElementById("loadMoreBtn");
     if(btn) btn.style.display = "none";
+}
+
+// Filter and Sort Logic
+function filterAndSort() {
+    let cat = document.getElementById("catFilter") ? document.getElementById("catFilter").value : "all";
+    let order = document.getElementById("priceSort") ? document.getElementById("priceSort").value : "default";
+    
+    let container = document.getElementById("productRow");
+    if(!container) return;
+    
+    let cards = Array.from(document.querySelectorAll(".product-wrapper"));
+    
+    // Make everything visible initially (overrides load more hidden state)
+    cards.forEach(c => { c.style.display = "block"; });
+    
+    // Hide Load More button if filters are used
+    let loadBtn = document.getElementById("loadMoreBtn");
+    if(loadBtn) loadBtn.style.display = "none";
+
+    // Filter
+    cards.forEach(card => {
+        if(cat !== "all" && card.dataset.category !== cat) {
+            card.style.display = "none";
+        }
+    });
+
+    // Sort
+    let visibleCards = cards.filter(card => card.style.display !== "none");
+    if(order === "low") {
+        visibleCards.sort((a,b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+    } else if(order === "high") {
+        visibleCards.sort((a,b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+    }
+    
+    // Re-append visible cards in sorted order
+    visibleCards.forEach(card => container.appendChild(card));
 }
 
 const carDatabase = {
