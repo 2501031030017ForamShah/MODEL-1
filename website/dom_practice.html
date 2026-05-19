@@ -58,30 +58,49 @@
         function addElement() {
             // Create new <p> tag
             const newP = document.createElement("p");
-            newP.className = "text-white fw-bold"; // Changed to text-white for visibility
+            // Added dynamic-feature class to help track newly created tags
+            newP.className = "text-white fw-bold dynamic-feature";
             newP.innerText = "🔹 New Feature: Panoramic Sunroof Added!";
             
             // Append to container
             document.getElementById("featuresContainer").appendChild(newP);
         }
 
-        // 2. Change Value
+        // 2. Change Value (Toggles back and forth every time you click)
         function changeValue() {
-            // Get element and change its innerText
             const titleElement = document.getElementById("carTitle");
-            titleElement.innerText = "Premium Luxury Edition Car 🏆";
-            titleElement.classList.replace("text-light", "text-warning");
+            
+            // Read current text content to switch states back and forth seamlessly
+            if (titleElement.innerText === "Standard Edition Car") {
+                titleElement.innerText = "Premium Luxury Edition Car 🏆";
+                titleElement.classList.remove("text-white");
+                titleElement.classList.add("text-warning");
+            } else {
+                titleElement.innerText = "Standard Edition Car";
+                titleElement.classList.remove("text-warning");
+                titleElement.classList.add("text-white");
+            }
         }
 
-        // 3. Remove Element
+        // 3. Remove Element (Removes old feature OR sequentially pops newly added features)
         function removeElement() {
-            // Find element and remove it
             const oldFeature = document.getElementById("oldFeature");
+            
             if (oldFeature) {
+                // If the original basic radio feature is still there, remove it first
                 oldFeature.remove();
                 alert("Old feature removed successfully!");
             } else {
-                alert("Element already removed.");
+                // Otherwise, look for the newly added dynamic features
+                const container = document.getElementById("featuresContainer");
+                const dynamicFeatures = container.getElementsByClassName("dynamic-feature");
+                
+                if (dynamicFeatures.length > 0) {
+                    // Remove the very last feature that was added to the stack
+                    dynamicFeatures[dynamicFeatures.length - 1].remove();
+                } else {
+                    alert("All removable elements are already gone!");
+                }
             }
         }
 
@@ -104,7 +123,7 @@
 
             // Create label
             const label = document.createElement("label");
-            label.className = "form-check-label text-white fw-bold"; // Changed to text-white for visibility
+            label.className = "form-check-label text-white fw-bold";
             label.setAttribute("for", input.id);
             label.innerText = "New Dynamic Option " + optionCount;
 
