@@ -236,3 +236,153 @@ footer .text-warning {
     border-color: var(--primary-color);
     box-shadow: none;
 }
+/* =========================================
+   FOOTER ALL WHITE TEXT
+========================================= */
+
+footer{
+
+    background-color:#141414;
+
+    padding:60px 20px;
+
+}
+
+
+
+/* ALL FOOTER TEXT WHITE */
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer p,
+footer a,
+footer li,
+footer span,
+footer .text-muted,
+footer .text-light,
+footer .text-dark,
+footer .custom-link{
+
+    color:white !important;
+
+}
+
+
+
+/* FOOTER LINK HOVER */
+
+footer a:hover{
+
+    color:#ff6a00 !important;
+
+}
+
+
+
+/* =========================================
+   DOM PRACTICE SECTION
+========================================= */
+
+.dom-practice{
+
+    padding:60px 20px;
+
+    text-align:center;
+
+}
+
+
+
+/* DOM HEADING */
+
+.dom-practice h2{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* DOM GREY TEXT */
+
+.dom-practice p{
+
+    color:#bfbfbf;
+
+    font-size:18px;
+
+    line-height:30px;
+
+}
+
+
+
+/* DOM BOX */
+
+.dom-box{
+
+    background:#1e1e1e;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    border:1px solid #333;
+
+    margin-top:30px;
+
+}
+
+
+
+/* BUTTON */
+
+.dom-btn{
+
+    background:#ff6a00;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-top:20px;
+
+    transition:0.3s;
+
+}
+
+
+
+/* BUTTON HOVER */
+
+.dom-btn:hover{
+
+    background:#ff7b1f;
+
+}
+
+
+
+/* ABOUT GREY TEXT */
+
+.about-text{
+
+    color:#bfbfbf;
+
+    font-size:18px;
+
+    line-height:32px;
+
+}      
